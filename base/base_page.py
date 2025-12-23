@@ -31,3 +31,4 @@ class BasePage:
                    
     def wait_invisibility_of_spiner(self):
         self.wait.until(EC.invisibility_of_element_located(self.SPINNER))
+        
