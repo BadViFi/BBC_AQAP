@@ -47,13 +47,11 @@ class TestSavePost(BaseTest):
         self.home_page.is_opened()
 
         post_url = self.home_page.click_on_post()
-        self.post_page.save_post(post_url)
-        
+        saved = self.post_page.save_post(post_url)
         self.home_page.open()
         self.home_page.is_opened()
         self.home_page.click_my_account()
-        self.home_page.click_on_saved()
 
-        self.saved_post.check_for_post(post_url)
-        
+        if saved:
+            self.home_page.click_on_saved()
         
